@@ -6,7 +6,7 @@ const SignIn = ({ setToken }) => {
   const [password, setPassword] = useState('');
 
   const signin = async () => {
-    const response = await axios.post('https://task-trackr-server-seven.vercel.app/signin', { email, password });
+    const response = await axios.post('http://localhost:3000/signin', { email, password });
     setToken(response.data.token);
     alert(response.data.message);
   };

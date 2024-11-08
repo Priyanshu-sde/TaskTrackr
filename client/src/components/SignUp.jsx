@@ -7,7 +7,7 @@ const SignUp = () => {
   const [name, setName] = useState('');
 
   const signup = async () => {
-    const response = await axios.post('https://task-trackr-server-seven.vercel.app/signup', { name, email, password });
+    const response = await axios.post('http://localhost:3000/signup', { name, email, password });
     alert(response.data.message);
   };
 
