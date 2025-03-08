@@ -5,7 +5,7 @@ const CreateTodo = ({ token }) => {
   const [title, setTitle] = useState('');
 
   const createTodo = async () => {
-    const response = await axios.post('http://localhost:3000/newTodo', { title }, {
+    const response = await axios.post('https://todo-backend-dj7sdmtsh-priyanshu-sdes-projects.vercel.app//newTodo', { title }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     alert(response.data.message);
