@@ -9,7 +9,7 @@ const Todos = ({ token }) => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await axios.get('https://todo-backend-nine-delta.vercel.app/todos', {
+      const response = await axios.get('https://task-trackr-backend.vercel.app/todos', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos(response.data);
@@ -19,7 +19,7 @@ const Todos = ({ token }) => {
   }, [token]);
 
   const createTodo = async () => {
-    const response = await axios.post('https://todo-backend-nine-delta.vercel.app/newTodo', { title }, {
+    const response = await axios.post('https://task-trackr-backend.vercel.app/newTodo', { title }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     alert(response.data.message);
@@ -28,7 +28,7 @@ const Todos = ({ token }) => {
   };
 
   const updateTodo = async (id) => {
-    const response = await axios.put(`https://todo-backend-nine-delta.vercel.app/${id}`, { title: newTitle }, {
+    const response = await axios.put(`https://task-trackr-backend.vercel.app/${id}`, { title: newTitle }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setTodos(todos.map(todo => todo._id === id ? response.data.todo : todo));
@@ -37,14 +37,14 @@ const Todos = ({ token }) => {
   };
 
   const toggleDone = async (id, done) => {
-    await axios.patch(`https://todo-backend-nine-delta.vercel.app/${id}/done`, { done: !done }, {
+    await axios.patch(`https://task-trackr-backend.vercel.app/${id}/done`, { done: !done }, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setTodos(todos.map(todo => todo._id === id ? { ...todo, done: !done } : todo));
   };
 
   const deleteTodo = async (id) => {
-    await axios.delete(`https://todo-backend-nine-delta.vercel.app/todos/${id}`, {
+    await axios.delete(`https://task-trackr-backend.vercel.app/todos/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setTodos(todos.filter(todo => todo._id !== id));
