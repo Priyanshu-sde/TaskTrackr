@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb+srv://priyanshusde:eAb2PJJS2HrSddwi@cluster0.kp9pk.mongodb.net/TaskTrackr");
+        await mongoose.connect("mongodb+srv://priyanshusde:EeLDkYLEoBzsp7Tt@cluster0.kp9pk.mongodb.net/Fullstack-Todo");
         console.log("MongoDB connected");
     }
     catch(error){
