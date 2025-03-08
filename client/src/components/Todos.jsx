@@ -9,7 +9,7 @@ const Todos = ({ token }) => {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await axios.get('https://todo-backend-dj7sdmtsh-priyanshu-sdes-projects.vercel.app//todos', {
+      const response = await axios.get('https://todo-backend-nine-delta.vercel.app/todos', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos(response.data);
